@@ -166,6 +166,7 @@ void processData(const char ch, const string& word,
         updateIncorrectGuess(incorrectGuess);
         updateEnteredChars(ch,incorrectChars);
     }
+}
     /*** TODO
         If ch in word:
             update secretWord: call updateSecretWord() function
