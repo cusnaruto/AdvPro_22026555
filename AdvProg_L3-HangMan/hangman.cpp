@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 #include "hangman.h"
 
 using std::string;
@@ -17,7 +17,7 @@ using std::cin;
 int generateRandomNumber(const int min, const int max)
 {
     srand(time(0));
-    n = max - min;
+    int n = max - min;
     int a = rand() % n + min; 
     return a;
 }
