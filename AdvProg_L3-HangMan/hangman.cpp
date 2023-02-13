@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 #include "hangman.h"
 
 using std::string;
@@ -16,10 +16,8 @@ using std::cin;
 ***/
 int generateRandomNumber(const int min, const int max)
 {
-    srand(time(0));
-    int n = max - min;
-    int a = rand() % n + min; 
-    return a;
+    int randomNumber = rand() % (max - min + 1) + min;
+	return randomNumber;
 }
 
 vector<string> readWordListFromFile(const string& filePath)
