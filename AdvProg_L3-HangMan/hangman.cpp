@@ -89,12 +89,11 @@ string chooseWordFromList(const vector<string>& wordList, int index)
         secretWord (string): answerWord in hidden form (form of ---)
 ***/
 string generateHiddenCharacters(string answerWord){
-    string secretWord;
+    string secretWord = "";
     int n = answerWord.length();
-    char k = '-';
     for (int i = 0; i < n; i++)
     {
-        secretWord[i] = k;
+        secretWord = secretWord + "-";
     }
     return secretWord;
 }
