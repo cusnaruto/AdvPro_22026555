@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include <iostream>
 #include "hangman.h"
 
 using std::string;
@@ -71,12 +71,17 @@ bool isCharInWord(const char ch, const string& word)
 string chooseWordFromList(const vector<string>& wordList, int index) 
 {
     // TODO: Return a lowercase word in the index position of the vector wordList.
-    string answer;
-    if (wordList.size() > 0) {
-  		int randomIndex = rand() % wordList.size();
-    	answer = tolower(wordList[randomIndex]);
-	} else return "";
-    return answer;
+    string answer = wordList[index];
+	int length = (int)answer.size();
+
+	for (int i = 0; i < length; i++)
+	{
+		char &ch = answer[i];
+		if ('A' <= ch && ch <= 'Z')
+			ch = (char)(ch - 'A' + 'a');
+	}
+
+	return answer;
 }
 
 /***
@@ -114,7 +119,7 @@ void updateSecretWord(string& secretWord, const char ch, const string& word)
 {
     for (int i = word.length() - 1; i >= 0; i--) {
         if (word[i] == ch) {
-            guessedWord[i] = ch;
+            secretWord[i] = ch;
         }
     }
 }
@@ -154,9 +159,9 @@ void updateIncorrectGuess(int& incorrectGuess){
 void processData(const char ch, const string& word, 
                 string& secretWord, 
                 string& correctChars, 
-                int& incorrectGuess, string& incorrectChars)
-{
-    if isCharInWord(ch, word)
+                int& incorrectGuess, string& incorrectChars){
+
+    if (isCharInWord(ch, word))
     {
         updateSecretWord(secretWord, ch, word);
         updateEnteredChars(ch, correctChars);
@@ -175,5 +180,5 @@ void processData(const char ch, const string& word,
             update incorrectGuess: call updateIncorrectGuess() function
             update incorrectChars: call updateEnteredChars() function
     ***/
-}
+
 
