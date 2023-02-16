@@ -116,7 +116,7 @@ char findBestChar(const vector<string>& candidateWords, const set<char>& selecte
 
     for (const string& s : candidateWords)
     {
-        for (char c = 'a'; c <= z; c++)
+        for (char c = 'a'; c <= 'z'; c++)
             {
                 if (selectedChars.count(c) == 0) {
                 charCounts[c]++;
@@ -154,16 +154,14 @@ string getWordMask(char nextChar)
 
 bool isCorrectChar(char ch, const string& mask)
 {
-    bool answer == false;
     for (int i = 0; i < mask.length(); i++)
     {
-        if (ch == mask[i];)
+        if (ch == mask[i])
         {
-            answer = true; 
-            return answer;
+            return true;
         }
     }
-    return answer;
+    return false;
 }
 
 /***
