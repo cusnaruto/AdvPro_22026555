@@ -4,7 +4,7 @@
     Args: color (SDL_Color): color value
 
     Returns:
-        Nonexd
+        Non
 ***/
 void Painter::setColor(SDL_Color color)
 {
