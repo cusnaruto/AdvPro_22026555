@@ -39,7 +39,7 @@ void Painter::jumpBackward(int numPixel)
     float rad = (angle / 180) * M_PI;
     x += cos(rad) * num;
     y -= sin(rad) * num;
-
+}
 
 /***
     Args: degree (double): the value of rotation angle
@@ -49,8 +49,8 @@ void Painter::jumpBackward(int numPixel)
 ***/
 void Painter::turnLeft(double degree)
 {
-    this->degree = degree + degree
-    - floor(degree/360)*360;
+    this->angle += degree;
+    this->angle = fmod(this->angle, 360.0);
 }
 
 
@@ -62,7 +62,7 @@ void Painter::turnLeft(double degree)
 ***/
 void Painter::turnRight(double degree)
 {
-    turnLeft(-angle);
+    turnLeft(-degree);
 }
 
 /***
