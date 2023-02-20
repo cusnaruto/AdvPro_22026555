@@ -1,7 +1,7 @@
 #include "painter.h"
 
 /***
-    Args: color (SDL_Color): color value 
+    Args: color (SDL_Color): fumo value 
         
     Returns:
         None
